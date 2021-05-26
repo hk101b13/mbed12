@@ -15,6 +15,7 @@ volatile int last;
 void servo_control(int speed) {
    if (speed > 200)       speed = 200;
    else if (speed < -200) speed = -200;
+   speed = -speed;
 
    servo = (CENTER_BASE + speed) / 20000.0f;
 }
